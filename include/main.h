@@ -68,20 +68,16 @@ void disabled(void);
 void competition_initialize(void);
 void opcontrol(void);
 
-
-
 #ifdef __cplusplus
-
 }
 #endif
 
 #ifdef __cplusplus
-extern okapi::ChassisControllerIntegrated drive;
-extern  okapi::ChassisControllerIntegrated lift;
+
 /**
  * You can add C++-only headers here
  */
 //#include <iostream>
 #endif
 
-#endif  // _PROS_MAIN_H_
+#endif // _PROS_MAIN_H_
