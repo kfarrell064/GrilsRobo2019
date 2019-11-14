@@ -55,8 +55,8 @@ void opcontrol() {
 
 
 			// lift.setTarget(controller.getAnalog(ControllerAnalog::leftY));
-			// lift.arcade(controller.getAnalog(ControllerAnalog::rightY),
-			// 	controller.getAnalog(ControllerAnalog::rightX));
+			lift.arcade(controller.getAnalog(ControllerAnalog::rightY),
+				controller.getAnalog(ControllerAnalog::rightX));
 
 
 			// if (controller.getDigital(ControllerDigital::R1))
