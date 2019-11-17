@@ -2,17 +2,17 @@
 
 Controller controller;
 auto drive = ChassisControllerBuilder()
-                 .withMotors({8, 10}, {-3, -2})
+                 .withMotors({-14, -2}, {20, 15})
                  .withGearset(AbstractMotor::gearset::green)
                  .withDimensions({{4.125_in, 14.75_in}, imev5GreenTPR})
                  .build();
 auto lift = AsyncVelControllerBuilder()
-                .withMotor({9, 6})
+                .withMotor({10, 9})
                 .withGearset(AbstractMotor::gearset::red)
                 .build();
-MotorGroup liftMotors = MotorGroup({9, 6});
+MotorGroup liftMotors = MotorGroup({10, -9});
 auto claw = AsyncVelControllerBuilder()
-                .withMotor(5)
+                .withMotor(1)
                 .withGearset(AbstractMotor::gearset::green)
                 .build();
 
@@ -37,7 +37,7 @@ void opcontrol() {
     drive->getModel()->arcade(controller.getAnalog(ControllerAnalog::leftY),
                               controller.getAnalog(ControllerAnalog::leftX));
 
-    lift->setTarget(controller.getAnalog(ControllerAnalog::rightY));
+    lift->setTarget(controller.getAnalog(ControllerAnalog::rightY)*100);
 
     if (controller.getDigital(ControllerDigital::R1))
       claw->setTarget(200);
